@@ -1,0 +1,13 @@
+flowchart LR
+  subgraph Frontend["Next.js Client :3000"]
+    UI[Pages + Components]
+    API[lib/api]
+  end
+  subgraph Backend["Express Server :7000"]
+    Routes["/api/*"]
+    Prisma[Prisma]
+  end
+  DB[(PostgreSQL)]
+  UI --> API
+  API -->|fetch JSON| Routes
+  Routes --> Prisma --> DB
