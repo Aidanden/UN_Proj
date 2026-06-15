@@ -12,4 +12,12 @@ export const queryKeys = {
     all: ["instructors"] as const,
     detail: (id: string) => ["instructors", id] as const,
   },
+  students: {
+    all: ["students"] as const,
+    detail: (id: string) => ["students", id] as const,
+  },
+  enrollments: {
+    all: ["enrollments"] as const,
+    detail: (id: string) => ["enrollments", id] as const,
+  },
 };

@@ -17,9 +17,7 @@ try {
                     {email: {contains: search as string}},
                 ],
             }),
-          include: {
-            courses: true,
-        },
+        orderBy: { lastName: "asc" },
     });
     return res.status(200).json(instructors);
 }catch(error: any) {

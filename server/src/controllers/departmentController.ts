@@ -6,9 +6,10 @@ export const DepartmentController = {
     async getAll(req:Request,res:Response) {
       const departments = await prisma.department.findMany({
         include: {
-            students: true,
+          _count: { select: { students: true } },
         },
-      })
+        orderBy: { name: "asc" },
+      });
 
      res.json(departments);
     },
@@ -20,7 +21,7 @@ export const DepartmentController = {
             id:id as string,
         },
         include: {
-            students: true,
+          _count: { select: { students: true } },
         },
     })
     if(!department) {

@@ -1,10 +1,10 @@
-import { PagePlaceholder } from "@/components/layout/PagePlaceholder";
+import { InstructorPage } from "@/components/instructors/InstructorPage";
 
 export default function InstructorsPage() {
   return (
-    <PagePlaceholder
-      title="الأساتذة"
-      description="صفحة إدارة الأساتذة — سنبني النماذج والجدول في الخطوة القادمة."
-    />
+    <InstructorPage />
   );
 }
+
+
+

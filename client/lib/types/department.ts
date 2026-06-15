@@ -5,7 +5,7 @@ export interface Department {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  students?: { id: string }[];
+  _count?: { students: number };
 }
 
 export type CreateDepartmentInput = {

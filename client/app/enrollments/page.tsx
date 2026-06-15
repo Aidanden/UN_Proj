@@ -1,10 +1,7 @@
-import { PagePlaceholder } from "@/components/layout/PagePlaceholder";
+import { EnrollmentPage } from "@/components/enrollment/EnrollmentPage";
 
 export default function EnrollmentsPage() {
   return (
-    <PagePlaceholder
-      title="التسجيلات"
-      description="صفحة تسجيل الطلاب في المقررات — سنبنيها في الخطوة القادمة."
-    />
+    <EnrollmentPage />
   );
 }

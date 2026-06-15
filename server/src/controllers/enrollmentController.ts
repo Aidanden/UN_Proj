@@ -7,10 +7,7 @@ export const EnrollmentController = {
     async getAll(req:Request,res:Response) {
         try {
             const enrollments = await prisma.enrollment.findMany({
-                include: {
-                    student: true,
-                    course: true,
-                },
+                orderBy: { enrollmentDate: "desc" },
             });
             return res.status(200).json(enrollments);
         } catch (error:any) {
@@ -23,10 +20,6 @@ export const EnrollmentController = {
             const {id} = req.params;
             const enrollment = await prisma.enrollment.findUnique({
                 where: {id: id as string},
-                include: {
-                    student: true,
-                    course: true,
-                },
             });
             return res.status(200).json(enrollment);
         } catch (error:any) {

@@ -120,7 +120,7 @@ export function DepartmentsPage() {
               >
                 <td className="py-2 pr-2">{dept.code}</td>
                 <td className="py-2 pr-2">{dept.name}</td>
-                <td className="py-2 pr-2">{dept.students?.length ?? 0}</td>
+                <td className="py-2 pr-2">{dept._count?.students ?? 0}</td>
                 <td className="py-2 pr-2">
                   <div className="flex gap-2">
                     <button

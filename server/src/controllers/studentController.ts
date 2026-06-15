@@ -8,8 +8,8 @@ export const StudentController = {
         const {departmentId,status,search} = req.query;
         const students = await prisma.student.findMany({
             where: {
-                departmentId: departmentId as string,
-                status: status as any,
+                ...(departmentId ? { departmentId: departmentId as string } : {}),
+                ...(status ? { status: status as any } : {}),
                 ...(search && {
                 OR: [
                     {firstName: {contains: search as string}},
@@ -18,15 +18,9 @@ export const StudentController = {
                 ],
             }),
         },
-            include: {
-                department: true,
-            },
             orderBy: {
-                createdAt: "desc", // desc Latest students first // asc first to latest
+                createdAt: "desc",
             },
-
-                // http://localhost:7000/api/students
-
         })
 
         return res.status(200).json(students);

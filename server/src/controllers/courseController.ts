@@ -5,10 +5,26 @@ export const CourseController = {
    async getAll(req:Request,res:Response) {
     try {
         const courses = await prisma.course.findMany({
-            include: {
-                instructor: true,
-                
+            select: {
+                id: true,
+                courseId: true,
+                name: true,
+                description: true,
+                credits: true,
+                departmentId: true,
+                instructorId: true,
+                capacity: true,
+                createdAt: true,
+                updatedAt: true,
+                instructor: {
+                    select: {
+                        id: true,
+                        firstName: true,
+                        lastName: true,
+                    },
+                },
             },
+            orderBy: { name: "asc" },
         });
         
         return res.status(200).json(courses);

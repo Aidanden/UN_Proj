@@ -1,10 +1,7 @@
-import { PagePlaceholder } from "@/components/layout/PagePlaceholder";
+import { StudentPage } from "@/components/student/StudentPage";
 
 export default function StudentsPage() {
   return (
-    <PagePlaceholder
-      title="الطلاب"
-      description="صفحة إدارة الطلاب — سنبني الجدول والفلاتر في الخطوة القادمة."
-    />
+    <StudentPage />
   );
 }
