@@ -20,4 +20,10 @@ export const queryKeys = {
     all: ["enrollments"] as const,
     detail: (id: string) => ["enrollments", id] as const,
   },
+<<<<<<< HEAD
+=======
+  auth: {
+    me: ["auth", "me"] as const,
+  },
+>>>>>>> 3019ad0 (sad)
 };

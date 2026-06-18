@@ -118,3 +118,17 @@ enum StudentStatus {
     SUSPENDED
     WITHDRAWN
 }
+
+model User {
+    id           String   @id @default(uuid())
+    email        String   @unique
+    passwordHash String
+    name         String
+    role         UserRole @default(ADMIN)
+    createdAt    DateTime @default(now())
+    updatedAt    DateTime @updatedAt
+}
+
+enum UserRole {
+    ADMIN
+}

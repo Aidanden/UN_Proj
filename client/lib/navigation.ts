@@ -25,6 +25,7 @@ export const navItems: NavItem[] = [
 
 const pageTitles: Record<string, string> = {
   "/": "لوحة التحكم",
+  "/login": "تسجيل الدخول",
   "/departments": "الأقسام",
   "/students": "الطلاب",
   "/instructors": "الأساتذة",
